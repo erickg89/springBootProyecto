@@ -14,8 +14,8 @@ public class UnidadMedida {
     private Integer id;
 
     @Column(name="unidad_almacenamiento")
-    private String uAlmacenamiento;
+    private String unidAlmacenamiento;
 
     @Column(name="unidad_venta")
-    private String uVenta;
+    private String unidVenta;
 }

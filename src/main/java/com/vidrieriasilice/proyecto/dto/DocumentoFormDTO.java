@@ -10,7 +10,7 @@ import lombok.Data;
 public class DocumentoFormDTO {
 
     @NotBlank (message = "El campo 'nombre de Documento' no debe estar vacío")
-    @Size(min=3,max=20,message = "")
+    @Size(min=3,max=20,message = "El campo 'nombre de Documento' debere tener minimo 3 y maximo 20 caracteres")
     private String nombreDoc;
     @NotBlank(message = "El campo 'CodSunat' no debe estar vacío")
     @Size(min=2,max = 2,message = "solo se admite 2 caracteres")
