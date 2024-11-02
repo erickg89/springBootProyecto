@@ -18,7 +18,7 @@ public class Servicio {
     private String codigo;
     @Column(name="nombre_servicio", length = 200)
     private String nombreServicio;
-    @Column(name="Unidad", length = 10)
+    @Column(name="unidad", length = 10)
     private String unidadMedida;
     @Column(name="categoria", length = 20)
     private String categoria;
