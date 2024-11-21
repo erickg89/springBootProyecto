@@ -4,6 +4,7 @@ package com.vidrieriasilice.proyecto.controller;
 import com.vidrieriasilice.proyecto.dto.ServicioFormDTO;
 import com.vidrieriasilice.proyecto.model.Categoria;
 import com.vidrieriasilice.proyecto.model.Servicio;
+import com.vidrieriasilice.proyecto.service.ContadorService;
 import com.vidrieriasilice.proyecto.service.ServicioService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,8 @@ public class ServicioController {
 
     @Autowired
     ServicioService servicioService;
+    @Autowired
+    private ContadorService contadorService;
 
     @GetMapping
     public Page<Servicio> paginate(
@@ -39,6 +42,10 @@ public class ServicioController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public Servicio create(@RequestBody @Validated ServicioFormDTO servicioFormDTO) {
+
+        String codigo= contadorService.generarCodigo("servicios");
+        System.out.println("codigo"+codigo);
+        servicioFormDTO.setCodigo(codigo);
         return servicioService.create(servicioFormDTO);
     }
 

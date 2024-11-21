@@ -23,6 +23,6 @@ public class Servicio {
     @Column(name="categoria", length = 20)
     private String categoria;
     @Column(name="dimension", length = 10)
-    private String dimension;
+    private Integer dimension;
 
 }
